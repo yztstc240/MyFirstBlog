@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>博客详情页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css"> <!--控制浏览器页面尺寸-->
+    <link rel="stylesheet" href="./static/css/index_css.css">
+</head>
+<body>
+    <!--导航栏-->
+    <nav class="ui my-menu-transparent inverted attached segment padded-tb-mini shadow-small">
+        <div class="ui container">
+            <div class="ui transparent inverted menu secondary stackable padded-tb-small">
+                <h2 class="ui teal header item">blog</h2>
+                <a href="#" class="m-item item mobile-hide"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item mobile-hide"><i class="sitemap icon"></i>分类</a>
+                <a href="#" class="m-item item mobile-hide"><i class="tags icon"></i>标签</a>
+                <a href="#" class="m-item item mobile-hide"><i class="folder icon"></i>归档</a>
+                <a href="#" class="m-item item mobile-hide"><i class="smile icon"></i>关于我</a>
+                <div class="m-item right item mobile-hide">
+                    <div class="ui icon inverted transparent input ">
+                        <input type="text" placeholder="请输入你想搜索的.....">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button top-right-button mobile-show margin-tb-mid">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav><!--TODO-->
+
+    <!--中间内容-->
+    <div class="my-container-small padded-tb-huge">
+        <div class="ui container">
+            <!--头部-->
+            <div class="ui top attached segment ">
+                        <!--作者、头像日期等-->
+                        <div class="ui horizontal link list">
+                            <div class="item">
+                                <img src="static/image/avatar.jpg" alt="作者头像" class="ui avatar image">
+                                <div class="content"><a href="#" target="_blank" class="header">我是作者</a></div><!--TODO-->
+                            </div>
+                            <div class="item">
+                                <i class="calendar icon"></i>2020-08-29
+                            </div>
+                            <div class="item">
+                                <i class="eye icon"></i> 6666
+                            </div>
+                        </div>
+            </div>
+            <!--图片区域-->
+            <div class="ui attached segment">
+                <img src="https://picsum.photos/id/1042/800/450" alt="图片" class="ui fluid rounded image">
+            </div>
+            <!--主要内容-->
+            <div class="ui attached padded segment">
+                <div class="ui right aligned basic segment">
+                    <div class="ui orange basic label">原创</div>
+                </div>
+                <!--博客正文-->
+                <h2 class="ui center aligned header">HTTP消息请求</h2>
+                <div id="content" class="padded-lr-responsive padded-tb-large">
+                    <h2>## HTTP :</h2><br>
+                    <h3>*概念:</h3> Hyper Text Transfer Protocol 超文本传输协议<br>
+                    <h3>*传输协议:</h3>定义了，客户端和服务器端通信时，发送数据的格式<br>
+                    *特点:<br>
+                    1.基于TCP/ IP的高级协议<br>
+                    2.默认端口号:80<br>
+                    3.基于请求/响应模型的:一次请求对应一-次响应<br>
+                    4.无状态的:每次请求之间相互独立，不能交互数据<br>
+                    *历史版本:<br>
+                    *1.0:每一次请求响应都会建立新的连接<br>
+                    * 1.1:复用连接<br>
+                    *请求消息数据格式<br>
+                    1.请求行<br>
+                    请求方式	请求url	请求协议/版本<br>
+                    GET	/login.html	HTTP/1.1<br>
+                    <br>
+                    *请求方式<br>
+                    *HTTP协议中有7种请求方式，常用的有两种<br>
+                    *GET:<br>
+                    1.请求参数在请求行中，在URL后<br>
+                    2.请求的URL长度有限制<br>
+                    3.不太安全<br>
+                    *POST：<br>
+                    1.请求参数在请求体中<br>
+                    2.请求的URL长度没有限制<br>
+                    3.相对安全<br>
+                    2.请求头<br>
+                    请求头名称：请求头值<br>
+                    *常见的请求头：<br>
+                    1.User-Agent：浏览器告诉服务器访问服务器使用的浏览器版本信息<br>
+                    *可以在服务器端获取该头信息，解决浏览器的兼容性问题<br>
+                    2.Referer：http://localhost/login.html<br>
+                    *告诉服务器，我（当前请求从哪里来）<br>
+                    *作用：<br>
+                    1.防盗链：<br>
+                    2.统计工作：<br>
+                    <br>
+                    3.请求空行<br>
+                    空行<br>
+                    4.请求体<br>
+                    *封装POST请求消息的请求参数的<br>
+                    *字符串格式<br>
+                    GET/login.html HTTP/1.1<br>
+                    Host：localhost<br>
+                    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 <br>(KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36<br><br>
+                    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,<br>image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9<br>
+                    Accept-Language: zh-CN,zh;q=0.9<br>
+                    Accept-Encoding: gzip, deflate, br<br>
+                    Referer: http://localhost/login.html<br>
+                    Connection: keep-alive<br>
+                    Upgrade-Insecure-Requests: 1<br>
+                    <br>
+                    username = 张三<br>
+                    (username=%E5%BC%A0%E4%B8%89)<br>
+                    <br>
+                    <br>
+                    ## Request :<br>
+                    1. request对象和response对象的原理<br>
+                    1. request和response对象 是由服务器创建的。我们来使用它们<br>
+                    2. request对象是来获取请求消息，response对象是来设置响应消息<br>
+                    2. request对象继承体系结构:<br>
+                    ServletRequest -- 接口<br>
+                    |<br>
+                    HttpServletReques -- 接口<br>
+                    |<br>
+                    org . apache . catalina. connector . RequestFacade -- 类( tomcat )<br>
+                    <br>
+                    3. request :获取请求消息<br>
+                    1.获取请求行数据<br>
+                    * GET /day14/ demo1 ?name=zhangsan HTTP/1.1<br>
+                    *方法:<br>
+                    1.获取请求方式: GET<br>
+                    * string getMethod()<br>
+                    **2.获取虚拟目录: /day14<br>
+                    * String getContextPath( )<br>
+                    3.获取Servlet路径: /demo1<br>
+                    * String getServletPath()<br>
+                    4.获取get方式请求参数: name=zhangsan<br>
+                    * string getQueryString()<br>
+                    **5.获取请求URI : /day14/ demo1<br>
+                    *String getRequestURI(): 	/day14/ demo1<br>
+                    * stringBuffer getRequestURL() :	http://localhost/day14/ demo1<br>
+                    6.获取协议及版本: HTTP/1.1 .<br>
+                    *string getProtocol()、<br>
+                    7.获取客户机的IP地址：<br>
+                    *String getRemoteAddr( )<br>
+                    2.获取请求头数据<br>
+                    3.获取请求体数据<br>
+                </div>
+                <!--标签-->
+                <div class="padded-lr-responsive">
+                    <a href="#" class="ui basic teal left pointing label">HTML</a>
+                </div>
+                <!--赞赏-->
+                <div class="ui center aligned basic segment">
+                    <button id="pay_button" class="ui basic orange circular button">赞赏</button>
+                </div>
+                <div class="ui pay flowing popup transition hidden">
+                    <div class="ui orange basic label">
+                        <div class="ui images" style="font-size: inherit !important;">
+                            <div class="image">
+                                <img src="./static/image/wecheat.png" alt="二维码" class="ui rounded bordered image" style="width: 120px">
+                                <div>支付宝</div>
+                            </div>
+                            <div class="image">
+                                <img src="./static/image/wecheat.png" alt="二维码" class="ui rounded bordered image" style="width: 120px">
+                                <div>微信</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--博客信息-->
+            <div class="ui attached positive message">
+                <div class="ui middle aligned grid">
+                    <div class="eleven wide column">
+                        <ui class="list">
+                            <li>作者：xxx</li>
+                            <li>发布时间：yyyy年MM月dd日 hh-mm-ss</li>
+                            <li>版权声明：xxx</li>
+                            <li>公众号转载：xxx</li>
+                        </ui>
+                    </div>
+                    <div class="five wide column">
+                        <img src="./static/image/wecheat.png" alt="二维码图片" class="ui right floated rounded bordered image" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <!--留言区域-->
+            <div class="ui bottom attached segment">
+                <!--留言区域列表-->
+                <div class="ui teal segment">
+                    <div class="ui comments">
+                        <h3 class="ui dividing header">Comments</h3>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="static/image/avatar.jpg">
+                            </a>
+                            <div class="content">
+                                <a class="author">Matt</a>
+                                <div class="metadata">
+                                    <span class="date">Today at 5:42PM</span>
+                                </div>
+                                <div class="text">
+                                    How artistic!
+                                </div>
+                                <div class="actions">
+                                    <a class="replay">回复</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="static/image/avatar.jpg">
+                            </a>
+                            <div class="content">
+                                <a class="author">Elliot Fu</a>
+                                <div class="metadata">
+                                    <span class="date">Yesterday at 12:30AM</span>
+                                </div>
+                                <div class="text">
+                                    <p>This has been very useful for my research. Thanks as well!</p>
+                                </div>
+                                <div class="actions">
+                                    <a class="replay">回复</a>
+                                </div>
+                            </div>
+                            <div class="comments">
+                                <div class="comment">
+                                    <a class="avatar">
+                                        <img src="static/image/avatar.jpg">
+                                    </a>
+                                    <div class="content">
+                                        <a class="author">Jenny Hess</a>
+                                        <div class="metadata">
+                                            <span class="date">Just now</span>
+                                        </div>
+                                        <div class="text">
+                                            Elliot you are always so right :)
+                                        </div>
+                                        <div class="actions">
+                                            <a class="reply">回复</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="static/image/avatar.jpg">
+                            </a>
+                            <div class="content">
+                                <a class="author">Joe Henderson</a>
+                                <div class="metadata">
+                                    <span class="date">5 days ago</span>
+                                </div>
+                                <div class="text">
+                                    Dude, this is awesome. Thanks so much
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">回复</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--留言框-->
+                <div class="ui form">
+                    <div class="field">
+                        <textarea name="content" placeholder="请输入评论。。。。。。"></textarea>
+                    </div>
+                    <div class="fields">
+                        <div class="field mobile-wide margin-tb-bottom-mini">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="nickname" placeholder="姓名">
+                            </div>
+                        </div>
+                        <div class="field mobile-wide margin-tb-bottom-mini">
+                            <div class="ui left icon input">
+                                <i class="mail icon"></i>
+                                <input type="text" name="email" placeholder="邮箱">
+                            </div>
+                        </div>
+                        <div class="field margin-tb-bottom-mini mobile-wide">
+                            <button class="ui teal button mobile-wide"><i class="rocket icon"></i>发布</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+    <!--底部footer-->
+    <footer class="ui inverted vertical segment padded-tb-massive">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="static/image/wecheat.png" alt="微信二维码" class="ui rounded image" style="width: 150px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header text-thin text-lined text-spaced opacity-mini">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">博客1</a>
+                        <a href="#" class="item">博客2</a>
+                        <a href="#" class="item">博客3</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header text-thin text-lined text-spaced opacity-mini">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email：310258782yzt@gmail.com</a>
+                        <a href="#" class="item">QQ：310258782</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header text-thin text-lined text-spaced opacity-mini">我的博客</h4>
+                    <p class="text-thin text-lined text-spaced opacity-mini">这里是我的博客，用于分享我学习中的任何资料以及笔记经验</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="text-thin text-lined text-spaced opacity-mini">Power by Springboot © 2020-2020 Design by YB </p>
+        </div>
+    </footer><!--TODO-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>  <!--引入jq-->
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script> <!--引入semanticUI-->
+    <script>
+        /*控制导航栏按钮*/
+        $('.menu.toggle').click(function () {
+            $('.m-item').toggleClass('mobile-hide');
+        })
+        /*打赏悬浮弹出*/
+        $("#pay_button").popup({
+           popup : $('.pay.popup'),
+            on : 'click',
+            position : 'bottom center'
+        });
+    </script>
+</body>
+</html>
