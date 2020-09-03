@@ -7,6 +7,13 @@
     padding: 0.3em !important;
 }
 
+.padded-mid{
+    padding: 3em!important;
+}
+.padded-large{
+    padding: 6em!important;
+}
+
 /*--------------内边距---------------*/
 .padded-tb-mini{
     padding-top: 0.1em !important;
@@ -109,6 +116,16 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.fixed{
+    position: fixed !important;
+    z-index: 10 !important;
+}
+
+.right-button{
+    bottom:0 !important;
+    right: 0 !important;
 }
 
 /*------------container-------------*/
